@@ -1,0 +1,45 @@
+/*=====================================
+ * At here you only put FONTS STYLE, CSS STYLE, that can be HELPFULL to ALL PAGES
+ * other than that please add new style at STYLE.SCSS.
+ *
+ * Commited by:ND 
+ *=====================================
+ */
+
+
+.left{
+	text-align:left;
+}
+.center{
+	text-align:center;
+}
+.right{
+	text-align:right;
+}
+
+.pos-relative{
+	position:relative;
+}
+
+.desktop{
+	display:block !important;
+}
+.mobile{
+	display:none !important;
+}
+
+.f-left{
+	float:left;
+}
+.f-right{
+	float:right;
+}
+
+@media all and (max-width: 768px){
+.desktop{
+	display:none !important;
+}
+.mobile{
+	display:block !important;
+}
+}

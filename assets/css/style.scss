@@ -1,0 +1,491 @@
+@import 'sass/helper';
+@import 'sass/global';
+
+
+.line-tiket{
+	background:url(../images/line-tiket.jpg) repeat-x; height:4px;
+}
+
+.web-logo{
+	height:40px; margin-top:20px; margin-left:60px; 
+}
+
+#webinfo{
+	position:fixed; bottom:0; left:0; width:100%; padding:10px 0; background:rgba(0,0,0,0.3);
+}
+
+.payment-steps{
+	position:absolute; top:10px; right:70px; max-width:350px; width:100%; height:50px; /*background:rgba(0,0,0,0.1);*/
+	.default-line{
+		border:none; border-top:3px solid #ddd; width:100%; position:absolute; top:$payment-steps-content-top; left:0; z-index:2;
+	}
+	.step-option{
+		position:absolute; top:$payment-steps-content-top; margin-top:-($w-radio/2); z-index:3;
+		&.step-1{
+			left:0;
+		}
+		&.step-2{
+			left:50%; margin-left:-($h-radio/2);
+		}
+		&.step-3{
+			right:0;
+		}
+		> p{
+			position:absolute; width:100px; left:50%; margin-left:-50px;
+			text-align:center;
+		}
+	}
+}
+
+
+.review-flight{
+	background:#F9F9F9; padding:20px 40px 0 40px; margin-bottom:20px;
+	.review-order-box{
+		.title{
+			border-bottom:2px solid #c2c2c2; position:relative; margin-bottom:15px;
+			font-family:$f-bold; font-size:20px; color:#979797;
+			.order-no{
+				position:absolute; top:5px; left:200px;
+				font-size:16px; color:#02629A;
+			}
+		}
+		.detail{
+			>.row{
+				>div{
+					padding:0; margin-bottom:15px;
+					&.col-sm-2{
+						width:14%;
+					}
+					&.col-sm-4{
+						margin-right:2.6667%;
+					}
+					.detail-title{
+						margin:0; margin-bottom:10px;
+						font-family:$f-bold; font-size:13px; color:#1a1919;
+						&.blue{
+							color:#02629a; 
+						}
+					}
+					.detail-bold{
+						font-family:$f-bold; font-size:13px; color:#1a1919;
+						ul{
+							margin:0; padding-left:20px;;
+							li{
+							}
+						}
+					}
+					.detail-logo{
+						img{
+							height:22px; margin-right:5px;
+						}
+					}
+					.review-free{
+						font-family:$f-bold; font-size:13px; color:#ff7200;
+					}
+				}
+				.grand-total-price{
+					background:#97cc35; padding:8px 10px; margin-bottom:0;
+					font-family:$f-bold; font-size:26px; color:#fff;
+					span{
+						display:block;
+						font-size:14px;
+					}
+				}
+			}
+		}
+	}
+	.flight-explanation-detail{
+		>.row{
+			>div{
+				padding:0;
+				p{
+					margin:0;
+				}
+			}
+		}
+	}
+}
+
+
+.step-box{
+	.step-header{
+		border-top:2px solid #02629a; background:#fff; padding:10px; position:relative;
+		font-family:$f-bold; font-size:20px; color:#02629a;
+		> div{
+			padding-left:30px;
+		}
+	}
+	.step-content{		
+		.col-sm-4{
+			padding-left:0;
+		}
+	}
+}
+
+#payment-choices{
+	cursor:pointer;
+	>.option{
+		border:1px solid #ddd; margin-bottom:10px; position:relative; background:#F8F8F8;
+		&.curr{
+			background:#fff;
+		}
+		.head{
+			padding:5px 40px;
+			> div{
+				float:left;
+				&.title{
+					margin:0; min-width:115px;
+					font-family:$f-medium; font-size:15px; line-height:36px;
+				}
+				&.payment-logo-box{
+					min-width:175px;
+				}
+				&.name{
+					font-family:$f-medium; font-size:13px; color:#999; line-height:36px; 
+				}
+			}
+			.payment-arrow-down{
+				position:absolute; top:17px; right:20px;
+			}
+		}
+		.content{
+			padding-top:10px; display:none;
+		}
+	}
+}
+
+
+
+
+.tab-list-box{
+	margin-bottom:20px;
+	.tab-list{
+		width:120px; display:inline-block; margin-right:10px; position:relative; padding-left:$w-radio-2 + 5; margin-bottom:10px;
+		text-align:left;
+		.radio-type-2{
+			position:absolute; top:10px; left:0px;
+		}
+		>p{
+
+		}
+
+		&.curr{
+			.payment-logo-2{
+				border:2px solid #00cfff;
+			}
+			>p{
+				font-family:$f-bold;
+			}
+		}
+	}
+}
+
+.payment-info-list-box{
+	>.title{
+		margin-bottom:20px;
+		font-family:$f-bold; font-size:15px; 
+	}
+	ul{
+		padding-left:30px;
+		li{
+			position:relative; list-style:none; margin-bottom:24px;
+			font-size:15px; line-height:1.4; color:#888;
+			>span{
+				border:1px solid #0098db; position:absolute; top:0; left:-30px; width:22px; height:22px; display:inline-block; border-radius:100px;
+				>span{
+					width:100%; height:100%; display:block;
+					font-size:15px; color:#0098db; text-align:center;
+				}
+			}
+		}
+	}
+}
+
+.deduction-box{
+	margin:0; margin-bottom:20px;
+	font-size:15px; color:#000; text-align:center;
+	.option-box{
+		>.option{
+			width:90px; margin-right:10px; display:inline-block;
+			.logo{
+				width:73px; height:73px; border:1px solid #ff7200; border-radius:7px; display:inline-block;
+				font-size:42px; color:#ff7200; text-align:center;
+				&.payment-tiket-logo{
+					padding-top:14px;
+				}
+				&.payment-giftcard{
+					padding-top:14px;
+				}
+			}
+			p{
+				font-size:15px; color:#000;
+			}
+			&:last-child{
+				margin-right:0;
+			}
+		}
+	}
+}
+
+.agreement-box{
+	margin-bottom:15px;
+	font-size:14px; line-height:1.43; text-align:center;
+	.checkbox-type-1{
+		margin-right:10px;
+	}
+	a{
+		color:#0098db;
+	}
+}
+
+
+.form-credit-card{
+	.title{
+		margin-bottom:5px;
+		font-family:$f-bold; font-size:15px; 
+	}
+	.detail{
+		margin-bottom:10px;
+		font-size:15px; color:#888;
+		.text{
+			float:left; width:65%;
+		}
+		.picture{
+			float:right;
+			img{
+				height:35px;
+			}
+		}
+	}
+	.box{
+		border-radius:10px; background:#f6f6f6; box-shadow:0 4px 2px 0 rgba(0, 0, 0, 0.15); padding:25px; margin-bottom:10px;
+		label{
+			display:block; margin-bottom:5px;
+			font-size:15px; color:#333;
+			span{
+				color:#f00;
+			}
+		}
+		.form-control{
+			margin-bottom:20px; height:50px;
+			font-size:17px; color:#333;
+		}
+		.expired-area{
+			float:left; width:60%;
+			font-size:20px;
+			.form-control{
+				width:40%; display:inline-block;
+			}
+		}
+		.cvv-area{
+			float:left; width:40%;
+		}
+	}
+	.cicilan-area{
+		margin-bottom:17px;
+		.radio-option{
+			margin-bottom:10px;
+			font-size:15px; color:#1a1a1a;
+			.label{
+				display:inline-block; margin-top:-25px;
+			}
+		}
+	}
+	.partner-area{
+		.title{
+			padding-top:25px; margin-bottom:20px;
+		}
+		.img-box{
+			margin-bottom:35px;
+			img{
+				height:20px; margin-right:18px;
+				&:last-child{
+					margin-right:0;
+				}
+			}
+		}
+	}
+}
+
+.form-klik-bca{
+	margin-bottom:37px;
+	>.title{
+		margin-bottom:10px;
+		font-size:17px;
+	}
+	>.form-control{
+		width:350px; height:40px; display:inline-block;
+		font-size:20px; color:#000; text-align:center;
+	}
+	>.detail{
+		font-size:14px; color:#888;
+	}
+}
+
+.form-klikpay{
+	margin-bottom:37px;
+	>.detail{
+		margin-bottom:17px;
+		font-size:14px; 
+	}
+	> img{
+		display:inline-block; margin-right:10px; width:50px;
+	}
+	> .form-control{
+		display:inline-block; width:300px;
+	}
+}
+
+.form-mandiri-clickpay{
+	.title{
+		margin-bottom:10px;
+		font-size:15px;
+	}
+	.box{
+		border-radius:6px; box-shadow: 0 2px 6px 0 rgba(0,0,0,0.08); border:1px solid #eee; padding:23px; margin-bottom:32px;
+		label{
+			display:block; margin:0; margin-bottom:5px;
+			font-size:14px;color:#858585;
+		}
+		p{
+			margin:0; margin-bottom:10px;
+			font-family:$f-bold; font-size:14px; 
+			&.blue{
+				color:#00599b;
+			}
+		}
+		.form-control{
+			margin-bottom:5px;
+		}
+	}
+}
+
+.part-title{
+	padding-left:60px; border-bottom:2px solid #02629a; margin-bottom:10px;
+	font-family:$f-bold; font-size:20px; color:#02629a;
+}
+
+
+
+
+
+
+/*--V1 STYLE-------------------------------------*/
+#detail-payment-area{
+	.title{
+		background:#ccc; padding:20px 50px;
+	}
+	.content{
+		background:#ebebeb; padding:20px 50px; min-height:200px;
+	}
+}
+
+#method-atm{
+	padding:30px 0;
+	.timer{
+		margin-bottom:34px;	
+	}
+	hr{
+		margin-bottom:13px;
+	}
+	.discount-payment-box{
+		margin-bottom:34px;
+	}
+}
+
+.total-payment-box{
+	margin-bottom:18px;
+	.detail{
+		margin-bottom:7px;
+		font-family:$f-medium; font-size:16px; color:#1a1919;
+	}
+	.total{
+		font-family:$f-bold; font-size:21px;
+		span{
+			color:#ff7200;
+		}
+	}
+}
+
+.agreement-payment-box{
+	>div{
+		float:left; margin-right:10px; width:90%;
+		&:first-child{
+			width:auto;
+		}
+	}
+}
+
+#detail-payment-area{
+	> .header{
+		background:#02629a; padding:15px 55px;
+		line-height:1.2; color:#fff;
+		p{
+			margin:0;
+			font-family:$f-bold; font-size:16px;
+		}
+		> span{
+			font-size:14px;
+			> span{
+				font-weight:bold;
+			}
+		}
+	}
+	> .body{
+		background:#F8F8F8;
+	}
+}
+
+#payment-details-flight{
+	.flight-detail-box{
+		padding:15px;
+		.flight-detail{
+			> .header{
+				border-bottom:2px solid #02629a; padding:5px 10px; position:relative; margin-bottom:10px;
+				p{
+					margin:0;
+					font-family:$f-bold; font-size:16px; color:#02629a;
+				}
+			}
+			> .body{
+				padding:20px 0;
+				.penumpang-list-box{
+					margin-bottom:20px;
+					p{
+						margin:0;
+						font-size:13px; color:#1a1919; line-height:1.5;
+					}
+					ul{
+						margin:0; padding-left:15px;
+						li{
+							.container-fluid{
+								display:unset !important;
+								.col-xs-6{
+									padding:0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.payment-detail{
+		border-top:2px solid #ddd; padding:22px 20px;
+		font-family:$f-bold; font-size:14px; color:#1a1919; line-height:1.4;
+		span{
+			color:#ff7200;
+		}
+	}
+
+	.grand-total-payment{
+		padding:10px 20px; background:#ddd;
+		font-family:$f-bold; font-size:26px; color:#ff7200;
+		span{
+			font-size:14px; color:#1a1919;
+		}
+	}
+}
+
+@import 'sass/media';

@@ -1,0 +1,314 @@
+/*=====================================
+ * At here you only put FONTS STYLE, CSS STYLE, that can be used to ALL PAGES
+ * other than that please add new style at STYLE.SCSS.
+ *
+ * Commited by:ND 
+ *=====================================
+ */
+
+$f-regular	: 'SamsungSans-Regular', Arial;
+$f-light	: 'SamsungSans-Light', Arial;
+$f-bold		: 'SamsungSans-Bold', Arial;
+$f-medium	: 'SamsungSans-Medium', Arial;
+$w-radio	: 20px;
+$h-radio	: 20px;
+$w-radio-2	: 16px;
+$h-radio-2	: 16px;
+$w-radio-3	: 20px;
+$h-radio-3	: 20px;
+$payment-steps-content-top	: 50%;
+
+
+@font-face {
+  font-family: "SamsungSans-Bold";
+  src:url("../fonts/SamsungSans-Bold.eot");
+  src:url("../fonts/SamsungSans-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SamsungSans-Bold.woff") format("woff"),
+    url("../fonts/SamsungSans-Bold.ttf") format("truetype"),
+    url("../fonts/SamsungSans-Bold.svg#SamsungSans-Bold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: "SamsungSans-Light";
+  src:url("../fonts/SamsungSans-Light.eot");
+  src:url("../fonts/SamsungSans-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SamsungSans-Light.woff") format("woff"),
+    url("../fonts/SamsungSans-Light.ttf") format("truetype"),
+    url("../fonts/SamsungSans-Light.svg#SamsungSans-Light") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: "SamsungSans-Medium";
+  src:url("../fonts/SamsungSans-Medium.eot");
+  src:url("../fonts/SamsungSans-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SamsungSans-Medium.woff") format("woff"),
+    url("../fonts/SamsungSans-Medium.ttf") format("truetype"),
+    url("../fonts/SamsungSans-Medium.svg#SamsungSans-Medium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: "SamsungSans-Regular";
+  src:url("../fonts/SamsungSans-Regular.eot");
+  src:url("../fonts/SamsungSans-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SamsungSans-Regular.woff") format("woff"),
+    url("../fonts/SamsungSans-Regular.ttf") format("truetype"),
+    url("../fonts/SamsungSans-Regular.svg#SamsungSans-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+ 
+}
+
+*:focus{
+	outline:none;
+}
+body{
+	font-family:$f-regular, 'Arial'; font-size:12px;
+}
+a, a:hover, a:focus{
+	color:inherit; text-decoration:none; outline:none;
+}
+hr{
+	margin:0;
+}
+
+.container, .container-fluid{
+	max-width:940px; width:100%; padding:0 10px;
+}
+
+.container-payment{
+	max-width:600px; padding:0 10px; margin:0 auto;
+}
+
+#header{
+	margin-bottom:55px;
+}
+
+#footer{
+	margin-top:30px; border-top:1px solid #c2c2c2; padding:35px;
+}
+
+.radio-type-1{
+	width:$w-radio; height:$h-radio; border-radius:50%; border:3px solid #02629a; background:#fff; display:inline-block;
+	&.bold{
+		width:25px; height:25px; border:5px solid #02629a; margin-left:-2px;
+	}
+	&.checked{
+		background:url(../images/checked-white.png) no-repeat center center #02629a;
+		&.grey{
+			background-color:#979797; border-color:#979797;
+		}
+	}
+	&.disabled{
+		border-color:#ddd;
+	}
+}
+
+.radio-type-2{
+	width:$w-radio-2; height:$h-radio-2; border-radius:50%; border:2px solid #ddd; background:#fff; display:inline-block;
+	&.checked{
+		background:url(../images/checked-white.png) no-repeat center center #00cfff; border:2px solid #00cfff;
+	}
+	&.disabled{
+	}
+}
+
+.radio-type-3{
+	width:$w-radio-3; height:$h-radio-3; border-radius:50%; border:2px solid #979797; background:#fff; display:inline-block;
+	&.checked{
+		border:6px solid #00dcff;
+	}
+	&.disabled{
+	}
+}
+
+.payment-logo{
+	width:60px; height:37px; border-radius:4px; border:1px solid #ddd; margin-right:8px; display:inline-block;
+	&.mastercard{
+		background:url(../images/mastercard.jpg) no-repeat center center #fff;
+	}
+	&.visa{
+		background:url(../images/visa.png) no-repeat center center #fff;
+	}
+	&.bca{
+		background:url(../images/bca.png) no-repeat center center #fff;
+	}
+	&.mandiri{
+		background:url(../images/mandiri.png) no-repeat center center #fff;
+	}
+	&.clickpay{
+		background:url(../images/clickpay.png) no-repeat center center #fff;
+	}
+	&.atm-bersama{
+		background:url(../images/atm-bersama.png) no-repeat center center #fff;
+	}
+	&.prima{
+		background:url(../images/prima.png) no-repeat center center #fff;
+	}
+	&.cimb-clicks{
+		background:url(../images/cimb-clicks.png) no-repeat center center #fff;
+	}
+	&.epay-bri{
+		background:url(../images/epay-bri.png) no-repeat center center #fff;
+	}
+}
+
+.payment-logo-2{
+	width:60px; height:37px; border-radius:4px; border:2px solid #ddd; box-shadow:0 3px 1px 0 rgba(0, 0, 0, 0.15); display:inline-block;
+	&.mastercard{
+		background:url(../images/mastercard.jpg) no-repeat center center #fff;
+	}
+	&.visa{
+		background:url(../images/visa.png) no-repeat center center #fff;
+	}
+	&.bca{
+		background:url(../images/bca.png) no-repeat center center #fff;
+	}
+	&.mandiri{
+		background:url(../images/mandiri.png) no-repeat center center #fff;
+	}
+	&.clickpay{
+		background:url(../images/clickpay.png) no-repeat center center #fff;
+	}
+	&.atm-bersama{
+		background:url(../images/atm-bersama.png) no-repeat center center #fff;
+	}
+	&.prima{
+		background:url(../images/prima.png) no-repeat center center #fff;
+	}
+	&.cimb-clicks{
+		background:url(../images/cimb-clicks.png) no-repeat center center #fff;
+	}
+	&.epay-bri{
+		background:url(../images/epay-bri.png) no-repeat center center #fff;
+	}
+}
+
+.checkbox-type-1{
+	width:13px; height:13px; border-radius:2px; border:2px solid #979797; background:#fff; display:inline-block; position:relative; margin-top:1px;
+	.check{
+		width:15px; height:12px; background:url(../images/checked-orange.png) no-repeat center center; position:absolute; bottom:0; left:0;
+	}
+}
+
+.button-save-1{
+	max-width:460px; width:100%; border-radius:6px; background:#ff7200; padding:7px 10px; display:inline-block; border:none; margin-bottom:40px;
+	font-size:20px; color:#fff;
+}
+
+.message-type-1{
+	padding:12px; margin-bottom:10px;
+	font-family:$f-bold; font-size:17px; color:#fff; text-align:center;
+	span{
+		font-size:15px; text-decoration:underline;
+	}
+	&.success{
+		background:#bcd931;
+	}
+	&.warning{
+		background:#ff7200;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--V1 STYLE-------------------------------------------*/
+
+
+
+.button-edit-1{
+	border-radius:3px; background:#02629a; padding:3px 7px; display:inline-block;
+	font-size:11px; color:#fff;
+}
+
+.timer{
+	.title{
+		margin:0; margin-bottom:7px;
+		font-size:14px; color:#888;
+	}
+	.subtitle{
+		margin:0; margin-bottom:7px;
+		font-size:13px; color:#888;
+	}
+	.timer-box{
+		width:80px; height:80px; border-radius:7px; overflow:hidden; display:inline-block; position:relative; margin-bottom:7px;
+		.bg-1{
+			position:absolute; top:0; left:0; width:100%; height:50%; background:#0081bb; border-radius:7px 7px 0 0;
+		}
+		.bg-2{
+			position:absolute; top:50%; left:0; width:100%; height:50%; background:#0098db; border-radius:0 0 7px 7px;
+		}
+		.current-timer{
+			position:absolute; top:5px; left:0; width:100%; z-index:4;
+			font-family:$f-bold; font-size:43px; color:#fff;
+		}
+		.current-timer-title{
+			position:absolute; top:55px; left:0; width:100%; z-index:4;
+			font-size:11px; color:#fff;
+		}
+	}
+	&:nth-child(2){
+		margin:0 10px;
+	}
+}
+
+.info-payment-box{
+	h3{
+		margin:0; margin-bottom:14px;
+		font-family:$f-medium; font-size:15px;
+	}
+	ol{
+		margin:0; padding:0; padding-left:20px; margin-bottom:30px;
+		font-size:14px; color:#888;
+		li{
+			margin-bottom:10px;
+		}
+	}
+}
+
+.discount-payment-box{
+	>.title{
+		margin-bottom:17px;
+		font-family:$f-medium; font-size:15px;
+	}
+	.option{
+		width:90px; margin-right:10px; display:inline-block;
+		text-align:center;
+		.icon{
+			width:73px; height:69px; border-radius:7px; border:1px solid #ff7200; margin-bottom:9px; display:inline-block;
+			&.tix-point{
+				background:url(../images/tix-point.png) no-repeat center center transparent;
+			}
+			&.gift-voucher{
+				background:url(../images/gift-voucher.png) no-repeat center center transparent;
+			}
+		}
+		.title{
+			min-height:50px;
+			font-family:$f-medium; font-size:15px;
+		}
+	}
+}
+
+.ul{
+	padding-left:15px;
+	.li{
+		position:relative;
+		.col-xs-6{
+			padding:0;
+		}
+	}
+}

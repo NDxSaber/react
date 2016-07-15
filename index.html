@@ -3,9 +3,35 @@
 <head>
 	<meta charset = "UTF-8">
 	<title>React App</title>
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link type="image/x-icon" rel="shortcut icon" href="http://en.tiket.com/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!--<script src="https://fb.me/react-15.1.0.js"></script>
+    <script src="https://fb.me/react-dom-15.1.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>-->
 </head>
 <body>
 	<div id="app"></div>
 	<script src="index.js"></script>
+	<script>
+		$(function(){
+			var message		= 'done';
+
+			$(document).ajaxStart(function() {
+				$(webinfo).text( "Please wait for a moment . . ." );
+			}).ajaxStop(function() {
+				$(webinfo).text(message);
+			});
+		});
+	</script>
 </body>
 </html>
