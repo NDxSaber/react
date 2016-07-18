@@ -7,7 +7,7 @@ class PaymentMethod extends React.Component {
         super();
 
         this.state = {
-            data: {"status":"SUCCESS","response_code":"00","response":[{"master_info":"Kartu Kredit","icon":[{"img":"icon_mastercard.png","alt":"Master Card"},{"img":"icon_visa.png","alt":"Visa"}],"additional_info":"Mastercard & Visa","link":"https:\/\/ww.core.payment.co\/api\/v1\/checkout\/1","type":"creditcard","message":""},{"master_info":"BCA","icon":[{"img":"icon_bca.png","alt":"BCA"}],"additional_info":"ATM BCA, Klik BCA, m-BCA & BCA Klikpay","link":"https:\/\/ww.core.payment.co\/api\/v1\/checkout\/11","type":"bca","message":""},{"master_info":"Mandiri","icon":[{"img":"icon_mandiri.png","alt":"Mandiri"}],"additional_info":"ATM Mandiri & Mandiri Clickpay","link":"https:\/\/ww.core.payment.co\/api\/v1\/checkout\/21","type":"mandiri","message":""},{"master_info":"CIMB","icon":[{"img":"icon_cimb.png","alt":"CIMB Niaga"}],"additional_info":"ATM CIMB & CIMB Clicks","link":"https:\/\/ww.core.payment.co\/api\/v1\/checkout\/31","type":"cimb","message":""},{"master_info":"BRI","icon":[{"img":"icon_bri.png","alt":"BRI"}],"additional_info":"Epay BRI","link":"https:\/\/ww.core.payment.co\/api\/v1\/checkout\/41","type":"bri","message":""},{"master_info":"Bank Lainnya","icon":[{"img":"icon_bank_lain.png","alt":"Others Bank"}],"additional_info":"ATM Bersama & Prima","link":"https:\/\/ww.core.payment.co\/api\/v1\/checkout\/method\/99","type":"others","message":""}]},
+            data: {},
         }
     };
 
@@ -44,18 +44,26 @@ class PaymentMethod extends React.Component {
     
 
     render() {
-        var paymentList = this.state.data.response;
+        var paymentList;
+        if (typeof this.state.data.response != 'undefined'){
+            var paymentList = this.state.data.response.map(function(list, key){
+                return (
+                    <PaymentOption data={list} />
+                );
+            });
+        }
+
+        // console.log(ReactDOM.findDOMNode(this.refs.red).id);
 
         return (
-            <div id="customer-step-area">
+            <div id="customer-step-area" ref="red">
                 <div className="step-box">
                     <div className="step-header">
                         <div>Payment Method</div>
                     </div>
                     <div className="step-content">
                         <div id="payment-choices">
-                            {paymentList.map((list, key) => <PaymentOption key={key} datax={list} />)}
-                            <PaymentOption/>
+                            {paymentList}
                         </div>
                     </div>
                 </div>
@@ -64,17 +72,30 @@ class PaymentMethod extends React.Component {
     }
 }
 
+
+
 class PaymentOption extends React.Component {
+    constructor() {
+        super();
+
+    }
+
     render() {
+        var paymentListData = this.props.data;
+        var iconList = paymentListData.icon.map(function(list, key){
+            return (
+                <PaymentIcon icon={list} />
+            );
+        });
+
         return (
             <div className="option">
-                <div className="head clearfix">
-                    <div className="title">Kartu Kredit</div>
+                <div className="head clearfix" onClick="">
+                    <div className="title">{paymentListData.master_info}</div>
                     <div className="payment-logo-box clearfix">
-                        <div className="payment-logo mastercard"></div>
-                        <div className="payment-logo visa"></div>
+                        {iconList}
                     </div>
-                    <div className="name">Master Card & VISA</div>
+                    <div className="name">{paymentListData.additional_info}</div>
                     <span className="payment-arrow-down"></span>
                 </div>
                 <div className="content">
@@ -84,8 +105,8 @@ class PaymentOption extends React.Component {
                             <div className="detail clearfix">
                                 <div className="text">Kini Anda dapat dengan aman menyimpan data kartu kredit Anda untuk memudahkan transaksi berikutnya.</div>
                                 <div className="picture">
-                                    <img src="<?php echo base_url();?>assets/images/mastercard-big.png"/>
-                                    <img src="<?php echo base_url();?>assets/images/visa-big.png"/>
+                                    <img src="assets/images/mastercard-big.png"/>
+                                    <img src="assets/images/visa-big.png"/>
                                 </div>
                             </div>
                             <div className="box">
@@ -124,12 +145,12 @@ class PaymentOption extends React.Component {
                             <div className="partner-area">
                                 <div className="title">Partner untuk program cicilan kami :</div>
                                 <div className="img-box">
-                                    <img src="<?php echo base_url();?>assets/images/anz.png"/>
-                                    <img src="<?php echo base_url();?>assets/images/cimb.png"/>
-                                    <img src="<?php echo base_url();?>assets/images/hsbc.png"/>
-                                    <img src="<?php echo base_url();?>assets/images/mega.png"/>
-                                    <img src="<?php echo base_url();?>assets/images/permata.png"/>
-                                    <img src="<?php echo base_url();?>assets/images/standardchartered.png"/>
+                                    <img src="assets/images/anz.png"/>
+                                    <img src="assets/images/cimb.png"/>
+                                    <img src="assets/images/hsbc.png"/>
+                                    <img src="assets/images/mega.png"/>
+                                    <img src="assets/images/permata.png"/>
+                                    <img src="assets/images/standardchartered.png"/>
                                 </div>
                             </div>
                         </div>
@@ -138,5 +159,24 @@ class PaymentOption extends React.Component {
                 </div>
             </div>
         );
+    }
+}
+
+
+
+class PaymentIcon extends React.Component {
+    constructor() {
+        super();
+
+    }
+
+    render() {
+        var logoData = this.props.icon;
+
+        return (
+            <div className="payment-logo">
+                <img src={'assets/images/'+logoData.img} alt={logoData.alt}/>
+            </div>
+        )
     }
 }

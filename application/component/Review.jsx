@@ -20,8 +20,8 @@ class Review extends React.Component {
                             <div className="col-sm-2">
                                 <h4 className="detail-title blue">Keberangkatan</h4>
                                 <div className="detail-logo">
-                                    <img src="<?php echo base_url();?>assets/images/logo-garuda-indonesia.png"/>
-                                    <img src="<?php echo base_url();?>assets/images/logo-qatar-airways.png"/>
+                                    <img src="assets/images/logo-garuda-indonesia.png"/>
+                                    <img src="assets/images/logo-qatar-airways.png"/>
                                 </div>
                             </div>
                             <div className="col-sm-4">
@@ -63,8 +63,8 @@ class Review extends React.Component {
                             <div className="col-sm-2">
                                 <h4 className="detail-title blue">Keberangkatan</h4>
                                 <div className="detail-logo">
-                                    <img src="<?php echo base_url();?>assets/images/logo-garuda-indonesia.png"/>
-                                    <img src="<?php echo base_url();?>assets/images/logo-qatar-airways.png"/>
+                                    <img src="assets/images/logo-garuda-indonesia.png"/>
+                                    <img src="assets/images/logo-qatar-airways.png"/>
                                 </div>
                             </div>
                             <div className="col-sm-4">

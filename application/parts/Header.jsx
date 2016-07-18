@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router'
 
 export default
 
@@ -9,6 +10,7 @@ class Header extends React.Component {
 
     render() {
         var dataWeb = this.props.dataWeb;
+        
         return (
             <header id="header">
                 <div className="line-tiket"></div>
@@ -23,11 +25,11 @@ class Header extends React.Component {
                         </div>
                         <div className="step-option step-2">
                             <span className="radio-type-1 bold"></span>
-                            <p>{dataWeb.step_2_name}</p>
+                            <p><Link to="/">{dataWeb.step_2_name}</Link></p>
                         </div>
                         <div className="step-option step-3">
                             <span className="radio-type-1 disabled"></span>
-                            <p>{dataWeb.step_3_name}</p>
+                            <p><Link to="/finish">{dataWeb.step_3_name}</Link></p>
                         </div>
                     </div>
                 </div>
