@@ -48,7 +48,7 @@ class PaymentMethod extends React.Component {
         if (typeof this.state.data.response != 'undefined'){
             var paymentList = this.state.data.response.map(function(list, key){
                 return (
-                    <PaymentOption data={list} />
+                    <PaymentOption key={key} data={list} />
                 );
             });
         }
@@ -84,7 +84,7 @@ class PaymentOption extends React.Component {
         var paymentListData = this.props.data;
         var iconList = paymentListData.icon.map(function(list, key){
             return (
-                <PaymentIcon icon={list} />
+                <PaymentIcon key={key} icon={list} />
             );
         });
 

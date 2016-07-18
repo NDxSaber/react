@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './application/App.jsx';
 
 //--Pages
@@ -9,7 +9,7 @@ import StepFinish from './application/page/StepFinish.jsx';
 
 
 ReactDOM.render(
-	<Router>
+	<Router history={hashHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={StepPayment}/>
       		<Route path="payment" component={StepPayment} />
