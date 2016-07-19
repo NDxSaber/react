@@ -115,7 +115,7 @@ hr{margin:0}
 #payment-choices>.option .head>div.title{margin:0;min-width:115px;font-family:SamsungSans-Medium,Arial;font-size:15px;line-height:36px}
 #payment-choices>.option .head>div.payment-logo-box{min-width:175px}
 #payment-choices>.option .head>div.name{font-family:SamsungSans-Medium,Arial;font-size:13px;color:#999;line-height:36px}
-#payment-choices>.option .head .payment-arrow-down{position:absolute;top:17px;right:20px}
+#payment-choices>.option .head .payment-arrow-down{position:absolute;top:17px;right:20px;color:#00599b}
 #payment-choices>.option .content{padding-top:10px;display:none}
 .tab-list-box{margin-bottom:20px}
 .tab-list-box .tab-list{width:120px;display:inline-block;margin-right:10px;position:relative;padding-left:21px;margin-bottom:10px;text-align:left}

@@ -21,7 +21,6 @@ class PaymentMethod extends React.Component {
             context: this,
             success: function(response) {
                 this.setState({data: response});
-                console.log(this.state.data);
 
             }.bind(this),
             error: function(error){}.bind(this)
@@ -77,7 +76,11 @@ class PaymentMethod extends React.Component {
 class PaymentOption extends React.Component {
     constructor() {
         super();
+        this._togglePaymentContent = this._togglePaymentContent.bind(this)
+    }
 
+    _togglePaymentContent() {
+        $(this.refs['toggle-div']).slideToggle()
     }
 
     render() {
@@ -90,7 +93,7 @@ class PaymentOption extends React.Component {
 
         return (
             <div className="option">
-                <div className="head clearfix" onClick="">
+                <div className="head clearfix" onClick={this._togglePaymentContent}>
                     <div className="title">{paymentListData.master_info}</div>
                     <div className="payment-logo-box clearfix">
                         {iconList}
@@ -98,7 +101,7 @@ class PaymentOption extends React.Component {
                     <div className="name">{paymentListData.additional_info}</div>
                     <span className="payment-arrow-down"></span>
                 </div>
-                <div className="content">
+                <div className="content" ref="toggle-div">
                     <div className="container-payment">
                         <div className="form-credit-card">
                             <div className="title">Payment Information</div>
