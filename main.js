@@ -4,13 +4,14 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './application/App.jsx';
 
 //--Pages
+import StepOrder from './application/page/StepOrder.jsx';
 import StepPayment from './application/page/StepPayment.jsx';
 import StepFinish from './application/page/StepFinish.jsx';
 
 ReactDOM.render(
 	<Router history={hashHistory}>
         <Route path="/" component={App}>
-            <IndexRoute component={StepPayment}/>
+            <IndexRoute component={StepOrder}/>
       		<Route path="payment" component={StepPayment} />
       		<Route path="finish" component={StepFinish} />
         </Route>

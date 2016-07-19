@@ -53,6 +53,7 @@ hr{margin:0}
 .checkbox-type-1{width:13px;height:13px;border-radius:2px;border:2px solid #979797;background:#fff;display:inline-block;position:relative;margin-top:1px}
 .checkbox-type-1 .check{width:15px;height:12px;background:url(../images/checked-orange.png) no-repeat center center;position:absolute;bottom:0;left:0}
 .button-save-1{max-width:460px;width:100%;border-radius:6px;background:#ff7200;padding:7px 10px;display:inline-block;border:none;margin-bottom:40px;font-size:20px;color:#fff}
+.button-detail{width:100px;height:25px;border-radius:3px;background-color:transparent;color:#ff7200;border:solid 1px #ff7200;margin-top:20px}
 .message-type-1{padding:12px;margin-bottom:10px;border-radius:3px;font-family:SamsungSans-Bold,Arial;font-size:17px;color:#fff;text-align:center}
 .message-type-1 span{font-size:15px;text-decoration:underline}
 .message-type-1.success{background:#8cd931}
@@ -79,6 +80,45 @@ hr{margin:0}
 .ul{padding-left:15px}
 .ul .li{position:relative}
 .ul .li .col-xs-6{padding:0}
+.float-label-control{position:relative;margin-bottom:1.5em}
+.float-label-control::-webkit-input-placeholder{color:transparent}
+.float-label-control:-moz-placeholder{color:transparent}
+.float-label-control::-moz-placeholder{color:transparent}
+.float-label-control:-ms-input-placeholder{color:transparent}
+.float-label-control input:-webkit-autofill,.float-label-control textarea:-webkit-autofill{background-color:transparent!important;-webkit-box-shadow:0 0 0 1000px #fff inset!important;-moz-box-shadow:0 0 0 1000px #fff inset!important;box-shadow:0 0 0 1000px #fff inset!important}
+.float-label-control input,.float-label-control label,.float-label-control textarea{font-size:1.3em;box-shadow:none;-webkit-box-shadow:none}
+.float-label-control input:focus,.float-label-control textarea:focus{box-shadow:none;-webkit-box-shadow:none;border-bottom-width:2px;padding-bottom:0}
+.float-label-control textarea:focus{padding-bottom:4px}
+.float-label-control input,.float-label-control textarea{display:block;width:100%;padding:.1em 0 1px;border:none;border-radius:0;border-bottom:1px solid #ddd;outline:0;margin:0;background:0 0}
+.float-label-control textarea{padding:.1em 0 5px}
+.float-label-control label{position:absolute;font-weight:400;top:-1em;left:.08em;color:#aaa;z-index:-1;font-size:.85em;-moz-animation:float-labels 300ms none ease-out;-webkit-animation:float-labels 300ms none ease-out;-o-animation:float-labels 300ms none ease-out;-ms-animation:float-labels 300ms none ease-out;-khtml-animation:float-labels 300ms none ease-out;animation:float-labels 300ms none ease-out;animation-play-state:running!important;-webkit-animation-play-state:running!important}
+.float-label-control input.empty+label,.float-label-control textarea.empty+label{top:.1em;font-size:1.5em;animation:none;-webkit-animation:none}
+.float-label-control input:not(.empty)+label,.float-label-control textarea:not(.empty)+label{z-index:1}
+.float-label-control input:not(.empty):focus+label,.float-label-control textarea:not(.empty):focus+label{color:#aaa}
+.float-label-control.label-bottom label{-moz-animation:float-labels-bottom 300ms none ease-out;-webkit-animation:float-labels-bottom 300ms none ease-out;-o-animation:float-labels-bottom 300ms none ease-out;-ms-animation:float-labels-bottom 300ms none ease-out;-khtml-animation:float-labels-bottom 300ms none ease-out;animation:float-labels-bottom 300ms none ease-out}
+.float-label-control.label-bottom input:not(.empty)+label,.float-label-control.label-bottom textarea:not(.empty)+label{top:3em}
+input.border.form-control.empty{border:none}
+.form-group.float-label-control.number{margin-bottom:0}
+@keyframes float-labels{0%{opacity:1;color:#aaa;top:.1em;font-size:1.5em}
+20%{font-size:1.5em;opacity:0}
+30%{top:.1em}
+50%{opacity:0;font-size:.85em}
+100%{top:-1em;opacity:1}}
+@-webkit-keyframes float-labels{0%{opacity:1;color:#aaa;top:.1em;font-size:1.5em}
+20%{font-size:1.5em;opacity:0}
+30%{top:.1em}
+50%{opacity:0;font-size:.85em}
+100%{top:-1em;opacity:1}}
+@keyframes float-labels-bottom{0%{opacity:1;color:#aaa;top:.1em;font-size:1.5em}
+20%{font-size:1.5em;opacity:0}
+30%{top:.1em}
+50%{opacity:0;font-size:.85em}
+100%{top:3em;opacity:1}}
+@-webkit-keyframes float-labels-bottom{0%{opacity:1;color:#aaa;top:.1em;font-size:1.5em}
+20%{font-size:1.5em;opacity:0}
+30%{top:.1em}
+50%{opacity:0;font-size:.85em}
+100%{top:3em;opacity:1}}
 .line-tiket{background:url(../images/line-tiket.jpg) repeat-x;height:4px}
 .web-logo{height:40px;margin-top:20px;margin-left:60px}
 #webinfo{position:fixed;bottom:0;left:0;width:100%;padding:10px 0;background:rgba(0,0,0,.3)}
@@ -91,20 +131,68 @@ hr{margin:0}
 .payment-steps .step-option>p{position:absolute;width:100px;top:24px;left:50%;margin-left:-50px;text-align:center}
 .review-flight{background:#F9F9F9;padding:20px 40px 0;margin-bottom:20px}
 .review-flight .review-order-box .title{border-bottom:2px solid #c2c2c2;position:relative;margin-bottom:15px;font-family:SamsungSans-Bold,Arial;font-size:20px;color:#979797}
-.review-flight .review-order-box .title .order-no{position:absolute;top:5px;left:200px;font-size:16px;color:#02629A}
+.review-flight .review-order-box .title .order-no{position:absolute;top:5px;right:0;font-size:16px;color:#02629A}
 .review-flight .review-order-box .detail>.row>div{padding:0;margin-bottom:15px}
 .review-flight .review-order-box .detail>.row>div.col-sm-2{width:14%}
 .review-flight .review-order-box .detail>.row>div.col-sm-4{margin-right:2.6667%}
+.review-flight .review-order-box .detail>.row>div .col-xs-4{width:32%}
+.review-flight .review-order-box .detail>.row>div .col-xs-2{width:18%}
 .review-flight .review-order-box .detail>.row>div .detail-title{margin:0;margin-bottom:10px;font-family:SamsungSans-Bold,Arial;font-size:13px;color:#1a1919}
 .review-flight .review-order-box .detail>.row>div .detail-title.blue{color:#02629a}
+.review-flight .review-order-box .detail>.row>div .detail-title.flight{font-size:14px;margin:3px 0}
+.review-flight .review-order-box .detail>.row>div .detail-title.underline{text-decoration:underline}
+.review-flight .review-order-box .detail>.row>div .no-bold{font-family:SamsungSans-Regular,Arial;font-weight:100}
 .review-flight .review-order-box .detail>.row>div .detail-bold{font-family:SamsungSans-Bold,Arial;font-size:13px;color:#1a1919}
 .review-flight .review-order-box .detail>.row>div .detail-bold ul{margin:0;padding-left:20px}
+.review-flight .review-order-box .detail>.row>div .detail-bold.orange{color:#ff7200}
+.review-flight .review-order-box .detail>.row>div .total-amount{font-size:26px}
 .review-flight .review-order-box .detail>.row>div .detail-logo img{height:22px;margin-right:5px}
+.review-flight .review-order-box .detail>.row>div .detail-logo-button{margin-top:16px}
 .review-flight .review-order-box .detail>.row>div .review-free{font-family:SamsungSans-Bold,Arial;font-size:13px;color:#ff7200}
+.review-flight .review-order-box .detail>.row>div .multiple-airlines-button{width:99px;height:20px;border-radius:100px;background-color:#ddd;font-size:11px;border:none;color:#888}
+.review-flight .review-order-box .detail>.row>div .transit{margin:7px 0 0;color:#888}
+.review-flight .review-order-box .detail>.row>div .flight-info{margin:4px 0 5px;padding-right:10px}
 .review-flight .review-order-box .detail>.row .grand-total-price{background:#97cc35;padding:8px 10px;margin-bottom:0;font-family:SamsungSans-Bold,Arial;font-size:26px;color:#fff}
 .review-flight .review-order-box .detail>.row .grand-total-price span{display:block;font-size:14px}
 .review-flight .flight-explanation-detail>.row>div{padding:0}
 .review-flight .flight-explanation-detail>.row>div p{margin:0}
+.review-hotel{background:#F9F9F9;padding:20px 40px 0;margin-bottom:20px}
+.review-hotel .review-order-box .title{border-bottom:2px solid #c2c2c2;position:relative;margin-bottom:15px;font-family:SamsungSans-Bold,Arial;font-size:20px;color:#979797}
+.review-hotel .review-order-box .title .order-no{position:absolute;top:5px;right:0;font-size:16px;font-family:SamsungSans-Bold,Arial;color:#02629A}
+.review-hotel .review-order-box .detail .detail-title{font-size:15px;margin:0}
+.review-hotel .review-order-box .detail .row .check-detail{border-right:solid 1px #ddd}
+.review-hotel .review-order-box .detail .row .check-detail p,.review-hotel .review-order-box .detail .row .room-detail p{font-size:13px;margin:5px -1px}
+.review-hotel .review-order-box .detail .row .room-price p{font-size:13px;margin:4px -4px}
+.review-hotel .review-order-box .detail .row .room-price .col-xs-5{width:44%;padding-right:0}
+.review-hotel .review-order-box .detail .row .room-price .col-xs-7{width:56%}
+.review-hotel .review-order-box .detail .row .room-price h3{font-size:26px;margin:-3px -5px}
+.review-hotel .review-order-box .detail .row .room-price h4{font-size:13px;margin-left:-4px;margin-bottom:0;margin-top:21px}
+.review-hotel .review-order-box .detail .row .detail-facility .title-facility{font-size:13px}
+.review-hotel .review-order-box .detail .row .col-md-3{width:23%;padding:5px}
+.review-hotel .review-order-box .detail .row .col-md-9{width:77%}
+.review-hotel .review-order-box .detail .row .orange{color:#ff7200}
+.review-hotel .review-order-box .detail .row .location{color:#888;margin:0;font-size:13px}
+.review-hotel .review-order-box .detail .row .strong{font-family:SamsungSans-Bold,Arial}
+.step-already h3{font-size:17px;padding-left:26px;margin:10px 0 0}
+.step-already small{font-size:10px;color:#888;padding-left:26px}
+.step-already .space-button{padding:5px 10px;float:left}
+.step-already .col-md-4{width:40%}
+.step-already .col-md-8{width:60%}
+.step-already .button-login{width:80px;height:40px;border-radius:6px;background-color:#ff7200;font-size:15px;color:#fff;border:none}
+.step-already .button-facebook{width:190px;height:40px;border-radius:6px;background-color:#00599b;font-size:15px;color:#fff;border:none}
+.step-already .button-google{width:171px;height:40px;border-radius:6px;background-color:#dc4e41;font-size:15px;color:#fff;border:none}
+.contact-form{border:solid 1px #ddd;padding:20px 50px}
+.contact-form .contact-form-title h3{font-size:17px;font-family:SamsungSans-Bold,Arial;text-decoration:underline}
+.contact-form .contact-form-sub h4{font-size:15px;font-family:SamsungSans-Bold,Arial}
+.contact-form .select2-container{box-sizing:border-box;display:inline-block;margin-top:6px;position:relative;vertical-align:middle}
+.contact-form .select2-container--default .select2-selection--single{border:none;border-radius:0}
+.contact-form .select2 .select2-container .select2-container--default,.contact-form .select2 .select2-container .select2-container--default .select2-container--below .select2-container--focus{width:82px}
+.contact-form .row .bottom{border-bottom:solid 1px #ddd;margin-top:-1px;margin-left:0;margin-right:0;margin-bottom:5px}
+.contact-form .row .bottom .col-sm-4{padding-left:0}
+.contact-form .col-sm-4{width:28%}
+.contact-form .col-sm-8{width:72%}
+.contact-form small{font-size:11px;color:#888}
+.contact-form .passanger-data{border:solid 1px #ddd;padding:0 70px}
 .step-box .step-header{border-top:2px solid #02629a;background:#fff;padding:10px;position:relative;font-family:SamsungSans-Bold,Arial;font-size:20px;color:#02629a}
 .step-box .step-header>div{padding-left:30px}
 .step-box .step-content .col-sm-4{padding-left:0}

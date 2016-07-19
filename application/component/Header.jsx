@@ -41,11 +41,11 @@ class Header extends React.Component {
                         <hr className="default-line"/>
                         <div className="step-option step-1">
                             <span className={className1}></span>
-                            <p>{dataWeb.step_1_name}</p>
+                            <p><Link to="/">{dataWeb.step_1_name}</Link></p>
                         </div>
                         <div className="step-option step-2">
                             <span className={className2}></span>
-                            <p><Link to="/">{dataWeb.step_2_name}</Link></p>
+                            <p><Link to="/payment">{dataWeb.step_2_name}</Link></p>
                         </div>
                         <div className="step-option step-3">
                             <span className={className3}></span>

@@ -9,121 +9,97 @@ class Review extends React.Component {
 
     render() {
         return (
-            <div id="customer-review-area" className="review-flight">
+            <div id="customer-review-area" className="review-hotel">
                 <div className="review-order-box">
                     <div className="title">
-                        Review Pemesanan
+                        Booking Review
                         <div className="order-no">No. Pesanan 123456</div>
                     </div>
                     <div className="detail container-fluid">
                         <div className="row">
-                            <div className="col-sm-2">
-                                <h4 className="detail-title blue">Keberangkatan</h4>
-                                <div className="detail-logo">
-                                    <img src="assets/images/logo-garuda-indonesia.png"/>
-                                    <img src="assets/images/logo-qatar-airways.png"/>
-                                </div>
+                            <div className="col-md-3">
+                                <img src="<?php echo base_url();?>assets/images/hotel-image.png"/>   
                             </div>
-                            <div className="col-sm-4">
-                                <div className="flight-explanation-detail container-fluid">
-                                    <div className="row">
-                                        <div className="col-xs-4">
-                                            <h4 className="detail-title">Jakarta (CGK)</h4>
-                                            <p>27 Jan 2017</p>
-                                            <p>04.30 am</p>
+                            <div className="col-md-9">
+                                <div className="row">
+                                    <div className="col-sm-8">
+                                        <h4 className="detail-title">The Ullin Vilas and Spa - by Karaniya Experience</h4>
+                                        <p className="location">Bali, Indonesia</p>
+                                        <div className="check-detail col-xs-4">
+                                            <p>Check-in date</p>
+                                            <p className="strong">Mon, 10 Mar 2017</p>
                                         </div>
-                                        <div className="col-xs-4">
+                                        <div className="check-detail col-xs-4">
+                                            <p>Check-out date</p>
+                                            <p className="strong">Wed, 20 Mar 2017</p>
                                         </div>
-                                        <div className="col-xs-4">
-                                            <h4 className="detail-title">Jakarta (CGK)</h4>
-                                            <p>27 Jan 2017</p>
-                                            <p>04.30 am</p>
+                                        <div className="room-detail col-xs-4">
+                                            <p className="strong">1 Room</p>
+                                            <p className="strong">2 Adult</p>
+                                        </div>
+                                    </div>
+                                    <div className="col-sm-4">
+                                        <div className="room-price">
+                                            <h4 className="strong">Rincian Harga</h4>
+                                            <div className="row">
+                                                <div className="col-xs-5">
+                                                    <p>Room Price</p>
+                                                </div>
+                                                <div className="col-xs-7">
+                                                    <p className="right">USD 24</p>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-xs-5">
+                                                    <p>Service Charge</p>
+                                                </div>
+                                                <div className="col-xs-7">
+                                                    <p className="right orange">FREE</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-3">
-                                <h4 className="detail-title blue">Penumpang</h4>
-                                <div className="detail-bold">
-                                    <ul>
-                                        <li>Ny. Adele Anastasya</li>
-                                        <li>Ny. Diana Rossi</li>
-                                    </ul>
-                                </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-3">
                             </div>
-                            <div className="col-sm-3">
-                                <h4 className="detail-title blue">Rincian Harga</h4>
-                                <div className="detail-bold clearfix">
-                                    <div className="f-left">Penerbangan</div>
-                                    <div className="f-right">IDR 590.000</div>
+                            <div className="col-md-6">
+                                <div className="detail-facility">
+                                <p className="title-facility">Facility</p>
+                                    <div className="facility-list col-sm-4">
+                                        <p><span className="payment-icon-food"></span> Breakfast</p>
+                                        <p><span className="payment-icon-food"></span> 24 Service</p>
+                                        <p><span className="payment-icon-food"></span> Restaurant</p>
+                                        <p><span className="payment-icon-food"></span> WiFi</p>
+                                        <p><span className="payment-icon-food"></span> Pool</p> 
+                                    </div>
+                                    <div className="facility-list col-sm-4">
+                                        <p><span className="payment-icon-food"></span> Sea View</p>
+                                        <p><span className="payment-icon-food"></span> Bathub</p>
+                                        <p><span className="payment-icon-food"></span> Hairdryer</p>
+                                        <p><span className="payment-icon-food"></span> Free Toiletries</p>
+                                        <p><span className="payment-icon-food"></span> Laundry</p>
+                                    </div>
+                                    <div className="col-sm-4"></div>
                                 </div>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-sm-2">
-                                <h4 className="detail-title blue">Keberangkatan</h4>
-                                <div className="detail-logo">
-                                    <img src="assets/images/logo-garuda-indonesia.png"/>
-                                    <img src="assets/images/logo-qatar-airways.png"/>
-                                </div>
+                            <div className="col-sm-9">
+                                <button className="button-detail"> + More info </button>
                             </div>
-                            <div className="col-sm-4">
-                                <div className="flight-explanation-detail container-fluid">
-                                    <div className="row">
-                                        <div className="col-xs-4">
-                                            <h4 className="detail-title">Jakarta (CGK)</h4>
-                                            <p>27 Jan 2017</p>
-                                            <p>04.30 am</p>
-                                        </div>
-                                        <div className="col-xs-4">
-                                        </div>
-                                        <div className="col-xs-4">
-                                            <h4 className="detail-title">Jakarta (CGK)</h4>
-                                            <p>27 Jan 2017</p>
-                                            <p>04.30 am</p>
-                                        </div>
+                            <div className="col-sm-3">
+                                <div className="row room-price">
+                                    <div className="col-xs-5">
+                                        <p>Payment Total</p>
+                                    </div>
+                                    <div className="col-xs-7">
+                                        <h3 className="align-right orange">AUD 24</h3>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="col-sm-3">
-                                <h4 className="detail-title blue">Penumpang</h4>
-                                <div className="detail-bold">
-                                    <ul>
-                                        <li>Ny. Adele Anastasya</li>
-                                        <li>Ny. Diana Rossi</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-sm-3">
-                                <h4 className="detail-title blue">Rincian Harga</h4>
-                                <div className="detail-bold clearfix">
-                                    <div className="f-left">Penerbangan</div>
-                                    <div className="f-right">IDR 590.000</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-3 col-sm-offset-9">
-                                <div className="detail-bold clearfix">
-                                    <div className="f-left">Asuransi</div>
-                                    <div className="f-right">IDR 10.000</div>
-                                </div>
-                                <div className="detail-bold clearfix">
-                                    <div className="f-left">Biaya Pelayanan</div>
-                                    <div className="f-right"><span className="review-free">GRATIS</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-3">
-                                <h4 className="detail-title blue">Keberangkatan</h4>
-                            </div>
-                            <div className="grand-total-price col-sm-3 col-sm-offset-6">
-                                <span>Total Harga</span>
-                                <div className="clearfix">
-                                    <div className="f-left">IDR</div>
-                                    <div className="f-right">1.650.500</div>
-                                </div>
+                                <small>*Payment will be processed in IDR worth <strong>IDR 300.000</strong></small>
                             </div>
                         </div>
                     </div>
