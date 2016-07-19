@@ -53,19 +53,20 @@ hr{margin:0}
 .checkbox-type-1{width:13px;height:13px;border-radius:2px;border:2px solid #979797;background:#fff;display:inline-block;position:relative;margin-top:1px}
 .checkbox-type-1 .check{width:15px;height:12px;background:url(../images/checked-orange.png) no-repeat center center;position:absolute;bottom:0;left:0}
 .button-save-1{max-width:460px;width:100%;border-radius:6px;background:#ff7200;padding:7px 10px;display:inline-block;border:none;margin-bottom:40px;font-size:20px;color:#fff}
-.message-type-1{padding:12px;margin-bottom:10px;font-family:SamsungSans-Bold,Arial;font-size:17px;color:#fff;text-align:center}
+.message-type-1{padding:12px;margin-bottom:10px;border-radius:3px;font-family:SamsungSans-Bold,Arial;font-size:17px;color:#fff;text-align:center}
 .message-type-1 span{font-size:15px;text-decoration:underline}
-.message-type-1.success{background:#bcd931}
+.message-type-1.success{background:#8cd931}
 .message-type-1.warning{background:#ff7200}
-.button-edit-1{border-radius:3px;background:#02629a;padding:3px 7px;display:inline-block;font-size:11px;color:#fff}
+.message-type-1.error{background:#f20000}
 .timer .title{margin:0;margin-bottom:7px;font-size:14px;color:#888}
 .timer .subtitle{margin:0;margin-bottom:7px;font-size:13px;color:#888}
-.timer .timer-box{width:80px;height:80px;border-radius:7px;overflow:hidden;display:inline-block;position:relative;margin-bottom:7px}
+.timer .timer-box{width:64px;height:68px;border-radius:7px;overflow:hidden;display:inline-block;position:relative;margin-bottom:7px}
 .timer .timer-box .bg-1{position:absolute;top:0;left:0;width:100%;height:50%;background:#0081bb;border-radius:7px 7px 0 0}
 .timer .timer-box .bg-2{position:absolute;top:50%;left:0;width:100%;height:50%;background:#0098db;border-radius:0 0 7px 7px}
-.timer .timer-box .current-timer{position:absolute;top:5px;left:0;width:100%;z-index:4;font-family:SamsungSans-Bold,Arial;font-size:43px;color:#fff}
-.timer .timer-box .current-timer-title{position:absolute;top:55px;left:0;width:100%;z-index:4;font-size:11px;color:#fff}
-.timer:nth-child(2){margin:0 10px}
+.timer .timer-box .current-timer{position:absolute;top:0;left:0;width:100%;z-index:4;font-family:SamsungSans-Bold,Arial;font-size:42px;color:#fff}
+.timer .timer-box .current-timer-title{position:absolute;top:48px;left:0;width:100%;z-index:4;font-size:11px;color:#fff}
+.timer .timer-box:nth-child(2){margin:0 10px 7px}
+.button-edit-1{border-radius:3px;background:#02629a;padding:3px 7px;display:inline-block;font-size:11px;color:#fff}
 .info-payment-box h3{margin:0;margin-bottom:14px;font-family:SamsungSans-Medium,Arial;font-size:15px}
 .info-payment-box ol{margin:0;padding:0;padding-left:20px;margin-bottom:30px;font-size:14px;color:#888}
 .info-payment-box ol li{margin-bottom:10px}
@@ -87,7 +88,7 @@ hr{margin:0}
 .payment-steps .step-option.step-1{left:0}
 .payment-steps .step-option.step-2{left:50%;margin-left:-10px}
 .payment-steps .step-option.step-3{right:0}
-.payment-steps .step-option>p{position:absolute;width:100px;left:50%;margin-left:-50px;text-align:center}
+.payment-steps .step-option>p{position:absolute;width:100px;top:24px;left:50%;margin-left:-50px;text-align:center}
 .review-flight{background:#F9F9F9;padding:20px 40px 0;margin-bottom:20px}
 .review-flight .review-order-box .title{border-bottom:2px solid #c2c2c2;position:relative;margin-bottom:15px;font-family:SamsungSans-Bold,Arial;font-size:20px;color:#979797}
 .review-flight .review-order-box .title .order-no{position:absolute;top:5px;left:200px;font-size:16px;color:#02629A}

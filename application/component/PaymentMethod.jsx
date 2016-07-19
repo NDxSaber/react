@@ -1,4 +1,11 @@
 import React from 'react';
+import Scroll from 'react-scroll';
+
+var Link       = Scroll.Link;
+var DirectLink = Scroll.DirectLink;
+var Element    = Scroll.Element;
+var Events     = Scroll.Events;
+var scroll     = Scroll.animateScroll;
 
 export default
 
