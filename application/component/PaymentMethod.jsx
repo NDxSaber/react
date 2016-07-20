@@ -83,7 +83,8 @@ class PaymentMethod extends React.Component {
 class PaymentOption extends React.Component {
     constructor() {
         super();
-        this._togglePaymentContent = this._togglePaymentContent.bind(this);
+        //-- bind your event handlers in the constructor so they are only bound once for every instance
+        this._togglePaymentContent = this._togglePaymentContent.bind(this);     
     }
 
     _togglePaymentContent() {
