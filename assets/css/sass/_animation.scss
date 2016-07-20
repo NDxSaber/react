@@ -1,0 +1,18 @@
+.animate-progress-50{
+    animation-name: halfProgressBar;
+    animation-duration: 1s;
+}
+.animate-progress-100{
+    animation-name: fullProgressBar;
+    animation-duration: 2s;
+}
+
+
+@keyframes halfProgressBar{
+    from{ width: 0; }
+    to{ width: 50%; }
+}
+@keyframes fullProgressBar{
+    from{ width: 0; }
+    to{ width: 100%; }
+}

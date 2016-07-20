@@ -83,7 +83,7 @@ class PaymentMethod extends React.Component {
 class PaymentOption extends React.Component {
     constructor() {
         super();
-        this._togglePaymentContent = this._togglePaymentContent.bind(this)
+        this._togglePaymentContent = this._togglePaymentContent.bind(this);
     }
 
     _togglePaymentContent() {
@@ -115,8 +115,8 @@ class PaymentOption extends React.Component {
                             <div className="detail clearfix">
                                 <div className="text">Kini Anda dapat dengan aman menyimpan data kartu kredit Anda untuk memudahkan transaksi berikutnya.</div>
                                 <div className="picture">
-                                    <img src="assets/images/mastercard-big.png"/>
-                                    <img src="assets/images/visa-big.png"/>
+                                    <img src="assets/images/icon_mastercard.png"/>
+                                    <img src="assets/images/icon_visa.png"/>
                                 </div>
                             </div>
                             <div className="box">
@@ -184,9 +184,7 @@ class PaymentIcon extends React.Component {
         var logoData = this.props.icon;
 
         return (
-            <div className="payment-logo">
-                <img src={'assets/images/'+logoData.img} alt={logoData.alt}/>
-            </div>
+            <div className="payment-logo mastercard"></div>
         )
     }
 }

@@ -18,7 +18,7 @@ class Review extends React.Component {
                     <div className="detail container-fluid">
                         <div className="row">
                             <div className="col-md-3">
-                                <img src="<?php echo base_url();?>assets/images/hotel-image.png"/>   
+                                <img src="assets/images/hotel-image.png"/>   
                             </div>
                             <div className="col-md-9">
                                 <div className="row">

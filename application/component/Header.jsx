@@ -16,19 +16,23 @@ class Header extends React.Component {
         var className1;
         var className2;
         var className3;
+        var classLineProg;
 
         if(currentStep == 3){
             className1      = "checked " + classRadioType;
             className2      = "checked " + classRadioType;
             className3      = "bold " + (fullStep?'checked ':'') + classRadioType;
+            classLineProg   = "progress-line full animate-progress-100";
         }else if(currentStep == 2){
             className1      = "checked " + classRadioType;
             className2      = "bold " + classRadioType;
             className3      = "disabled " + classRadioType;
+            classLineProg   = "progress-line half animate-progress-50";
         }else if(currentStep == 1){
             className1      = "bold " + classRadioType;
             className2      = "disabled " + classRadioType;
             className3      = "disabled " + classRadioType;
+            classLineProg   = "progress-line";
         }
         
         return (
@@ -39,6 +43,7 @@ class Header extends React.Component {
                     <div className="payment-steps">
                         <p className="icon-peace"></p>
                         <hr className="default-line"/>
+                        <hr className={classLineProg}/>
                         <div className="step-option step-1">
                             <span className={className1}></span>
                             <p><Link to="/">{dataWeb.step_1_name}</Link></p>
