@@ -1,5 +1,11 @@
+//--Plugin
 import React from 'react';
 import Scroll from 'react-scroll';
+
+//--Component
+import InfoListBox from '../component/InfoListBox.jsx';
+import Deduction from '../component/Deduction.jsx';
+
 
 var Link       = Scroll.Link;
 var DirectLink = Scroll.DirectLink;
@@ -20,12 +26,9 @@ class PaymentMethod extends React.Component {
 
     componentWillMount(){
         //--Called the first time the component is loaded right before the component is added to the page
-        var ini = this;
-
         $.ajax({
             method: "GET",
             url: "http://ww.core.payment.co/api/v1/checkout/available-payment",
-            context: this,
             success: function(response) {
                 this.setState({data: response});
 
@@ -52,7 +55,7 @@ class PaymentMethod extends React.Component {
     render() {
         var paymentList;
         if (typeof this.state.data.response != 'undefined'){
-            var paymentList = this.state.data.response.map(function(list, key){
+            paymentList = this.state.data.response.map(function(list, key){
                 return (
                     <PaymentOption key={key} data={list} />
                 );
@@ -83,17 +86,46 @@ class PaymentMethod extends React.Component {
 class PaymentOption extends React.Component {
     constructor() {
         super();
+
+        this.state = {
+            paymentFormData: {},
+        }
+
         //-- bind your event handlers in the constructor so they are only bound once for every instance
-        this._togglePaymentContent = this._togglePaymentContent.bind(this);     
+        this._getPaymentForm = this._getPaymentForm.bind(this);
     }
 
-    _togglePaymentContent() {
-        $(this.refs['toggle-div']).slideToggle()
+    _getPaymentForm() {
+        var ref     = $(this.refs['toggle-div']);
+        var link    = ref.data('paymentformlink');
+        
+        $.ajax({
+            method: "GET",
+            url: link+'?lang=en',
+            success: function(response) {
+                if(response.response_code == "00"){
+                    this.setState({
+                        'paymentFormData':response.response_data
+                    });
+                    ref.slideToggle();
+                }
+            }.bind(this),
+            error: function(error){}.bind(this)
+        });
+    }
+
+    _setupPaymentContent(){
+        var content     = '';
+        content         += <InfoListBox title={this.state.paymentFormData.title} list={this.state.paymentFormData.points} />;
+        content         += <Deduction data={this.state.paymentFormData}/>;
+        return({content});
     }
 
     render() {
         var paymentListData = this.props.data;
-        var iconList = paymentListData.icon.map(function(list, key){
+        var iconList        = [];
+
+        iconList            = paymentListData.icon.map(function(list, key){
             return (
                 <PaymentIcon key={key} icon={list} />
             );
@@ -101,7 +133,7 @@ class PaymentOption extends React.Component {
 
         return (
             <div className="option">
-                <div className="head clearfix" onClick={this._togglePaymentContent}>
+                <div className="head clearfix" onClick={this._getPaymentForm}>
                     <div className="title">{paymentListData.master_info}</div>
                     <div className="payment-logo-box clearfix">
                         {iconList}
@@ -109,9 +141,9 @@ class PaymentOption extends React.Component {
                     <div className="name">{paymentListData.additional_info}</div>
                     <span className="payment-arrow-down"></span>
                 </div>
-                <div className="content" ref="toggle-div">
+                <div className="content" ref="toggle-div" data-paymentformlink={paymentListData.link}>
                     <div className="container-payment">
-                        <div className="form-credit-card">
+                        <div className="form-credit-card hide">
                             <div className="title">Payment Information</div>
                             <div className="detail clearfix">
                                 <div className="text">Kini Anda dapat dengan aman menyimpan data kartu kredit Anda untuk memudahkan transaksi berikutnya.</div>
@@ -165,7 +197,8 @@ class PaymentOption extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        
+                        <InfoListBox title={this.state.paymentFormData.title} list={this.state.paymentFormData.points} />
+                        <Deduction data={this.state.paymentFormData}/>
                     </div>
                 </div>
             </div>
@@ -189,3 +222,4 @@ class PaymentIcon extends React.Component {
         )
     }
 }
+

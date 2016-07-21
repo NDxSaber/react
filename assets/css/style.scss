@@ -12,7 +12,8 @@
 }
 
 #webinfo{
-	position:fixed; bottom:0; left:0; width:100%; padding:10px 0; background:rgba(0,0,0,0.3);
+	position:fixed; bottom:0; left:0; z-index:9; width:100%; padding:10px 0; background:#3949ab; display:none;
+	font-size:20px; color:#fff; text-align:center;
 }
 
 .payment-steps{
@@ -438,7 +439,7 @@
 	}
 }
 
-.payment-info-list-box{
+.info-list-box{
 	>.title{
 		margin-bottom:20px;
 		font-family:$f-bold; font-size:15px; 

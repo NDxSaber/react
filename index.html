@@ -25,12 +25,15 @@
 	<script src="index.js"></script>
 	<script>
 		$(function(){
-			var message		= 'done';
+			var message		= 'DONE';
 
 			$(document).ajaxStart(function() {
-				$(webinfo).text( "Please wait for a moment . . ." );
+				$(webinfo).slideDown().text( "Please wait for a moment . . ." );
 			}).ajaxStop(function() {
 				$(webinfo).text(message);
+				setInterval(function(){
+					$(webinfo).slideUp('slow');
+				}, 5000);;
 			});
 		});
 	</script>

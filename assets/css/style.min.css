@@ -127,7 +127,7 @@ to{width:50%}}
 to{width:100%}}
 .line-tiket{background:#fdcb04;height:4px}
 .web-logo{height:40px;margin-top:20px;margin-left:60px}
-#webinfo{position:fixed;bottom:0;left:0;width:100%;padding:10px 0;background:rgba(0,0,0,.3)}
+#webinfo{position:fixed;bottom:0;left:0;z-index:9;width:100%;padding:10px 0;background:#3949ab;display:none;font-size:20px;color:#fff;text-align:center}
 .payment-steps{position:absolute;top:10px;right:70px;max-width:350px;width:100%;height:50px}
 .payment-steps .default-line{border:none;border-top:3px solid #ddd;width:100%;position:absolute;top:50%;left:0;z-index:2}
 .payment-steps .progress-line{border:none;border-top:3px solid #02629a;width:0;position:absolute;top:50%;left:0;z-index:3}
@@ -220,11 +220,11 @@ to{width:100%}}
 .tab-list-box .tab-list .radio-type-2{position:absolute;top:10px;left:0}
 .tab-list-box .tab-list.curr .payment-logo-2{border:2px solid #00cfff}
 .tab-list-box .tab-list.curr>p{font-family:SamsungSans-Bold,Arial}
-.payment-info-list-box>.title{margin-bottom:20px;font-family:SamsungSans-Bold,Arial;font-size:15px}
-.payment-info-list-box ul{padding-left:30px}
-.payment-info-list-box ul li{position:relative;list-style:none;margin-bottom:24px;font-size:15px;line-height:1.4;color:#888}
-.payment-info-list-box ul li>span{border:1px solid #0098db;position:absolute;top:0;left:-30px;width:22px;height:22px;display:inline-block;border-radius:100px}
-.payment-info-list-box ul li>span>span{width:100%;height:100%;display:block;font-size:15px;color:#0098db;text-align:center}
+.info-list-box>.title{margin-bottom:20px;font-family:SamsungSans-Bold,Arial;font-size:15px}
+.info-list-box ul{padding-left:30px}
+.info-list-box ul li{position:relative;list-style:none;margin-bottom:24px;font-size:15px;line-height:1.4;color:#888}
+.info-list-box ul li>span{border:1px solid #0098db;position:absolute;top:0;left:-30px;width:22px;height:22px;display:inline-block;border-radius:100px}
+.info-list-box ul li>span>span{width:100%;height:100%;display:block;font-size:15px;color:#0098db;text-align:center}
 .deduction-box{margin:0;margin-bottom:20px;font-size:15px;color:#000;text-align:center}
 .deduction-box .option-box>.option{width:90px;margin-right:10px;display:inline-block}
 .deduction-box .option-box>.option .logo{width:73px;height:73px;border:1px solid #ff7200;border-radius:7px;display:inline-block;font-size:42px;color:#ff7200;text-align:center}
