@@ -204,6 +204,7 @@ to{width:100%}}
 .contact-form .passanger-data{border:solid 1px #ddd;padding:0 70px}
 .step-box .step-header{border-top:2px solid #02629a;background:#fff;padding:10px;position:relative;font-family:SamsungSans-Bold,Arial;font-size:20px;color:#02629a}
 .step-box .step-header>div{padding-left:30px}
+.step-box .step-content{height:2000px}
 .step-box .step-content .col-sm-4{padding-left:0}
 #payment-choices{cursor:pointer}
 #payment-choices>.option{border:1px solid #ddd;margin-bottom:10px;position:relative;background:#F8F8F8}

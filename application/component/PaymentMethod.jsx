@@ -1,5 +1,6 @@
 //--Plugin
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Scroll from 'react-scroll';
 
 //--Component
@@ -65,7 +66,7 @@ class PaymentMethod extends React.Component {
         // console.log(ReactDOM.findDOMNode(this.refs.red).id);
 
         return (
-            <div id="customer-step-area" ref="red">
+            <div id="customer-step-area">
                 <div className="step-box">
                     <div className="step-header">
                         <div>Payment Method</div>
@@ -89,6 +90,7 @@ class PaymentOption extends React.Component {
 
         this.state = {
             paymentFormData: {},
+            reference: {},
         }
 
         //-- bind your event handlers in the constructor so they are only bound once for every instance
@@ -99,26 +101,27 @@ class PaymentOption extends React.Component {
         var ref     = $(this.refs['toggle-div']);
         var link    = ref.data('paymentformlink');
         
-        $.ajax({
-            method: "GET",
-            url: link+'?lang=en',
-            success: function(response) {
-                if(response.response_code == "00"){
-                    this.setState({
-                        'paymentFormData':response.response_data
-                    });
-                    ref.slideToggle();
-                }
-            }.bind(this),
-            error: function(error){}.bind(this)
-        });
-    }
-
-    _setupPaymentContent(){
-        var content     = '';
-        content         += <InfoListBox title={this.state.paymentFormData.title} list={this.state.paymentFormData.points} />;
-        content         += <Deduction data={this.state.paymentFormData}/>;
-        return({content});
+        // console.log(ReactDOM.findDOMNode(this.refs['toggle-div']));
+        // console.log(ReactDOM.findDOMNode(this.refs['toggle-div']).innerHTML());
+        // console.log(ReactDOM.findDOMNode(this.refs['toggle-div']).slideToggle());
+        // console.log(ReactDOM.findDOMNode(this.refs['toggle-div']).data('paymentformlink'));
+        // console.log(ReactDOM.findDOMNode(this.refs['toggle-div']).data('paymentformlink'));
+        ref.slideToggle().toggleClass("show");
+        
+        if(ref.hasClass('show')){
+            $.ajax({
+                method: "GET",
+                url: link+'?lang=en',
+                success: function(response) {
+                    if(response.response_code == "00"){
+                        this.setState({
+                            'paymentFormData':response.response_data
+                        });
+                    }
+                }.bind(this),
+                error: function(error){}.bind(this)
+            });
+        }
     }
 
     render() {
@@ -130,6 +133,11 @@ class PaymentOption extends React.Component {
                 <PaymentIcon key={key} icon={list} />
             );
         });
+
+        var paymentForm     = '';
+        if(Object.keys(this.state.paymentFormData).length !== 0){
+            paymentForm     = <PaymentForm data={this.state.paymentFormData}/>;
+        }
 
         return (
             <div className="option">
@@ -198,7 +206,7 @@ class PaymentOption extends React.Component {
                             </div>
                         </div>
                         <InfoListBox title={this.state.paymentFormData.title} list={this.state.paymentFormData.points} />
-                        <Deduction data={this.state.paymentFormData}/>
+                        <Deduction/>
                     </div>
                 </div>
             </div>
@@ -223,3 +231,32 @@ class PaymentIcon extends React.Component {
     }
 }
 
+
+
+class PaymentForm extends React.Component {
+    constructor() {
+        super();
+    }
+
+    render() {
+        var paymentFormData = this.props.data;
+        var infolist        = '';
+
+        //--If "info box" is set
+        if(typeof paymentFormData.title != 'undefined' && typeof paymentFormData.points != 'undefined'){
+            infolist        += <InfoListBox title={paymentFormData.title} list={paymentFormData.points} />;
+        }
+
+        //--If "deduction" is set
+        if(typeof paymentFormData.title != 'undefined'){
+            infolist        += <Deduction />;
+        }
+        
+
+        return (
+            <div>
+                {infolist}
+            </div>
+        )
+    }
+}
